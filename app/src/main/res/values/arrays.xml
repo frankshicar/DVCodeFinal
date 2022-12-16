@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="lv_item">
+        <item>33+12=45</item>
+        <item>120/4=30</item>
+        <item>130-34=96</item>
+        <item>130*2=260</item>
+        <item>65*3=315</item>
+        
+    </string-array>
+</resources>
