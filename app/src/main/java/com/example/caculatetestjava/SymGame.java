@@ -120,6 +120,7 @@ public class SymGame extends AppCompatActivity {
     }
 
     private void updateQuestion(int num) {
+        
         question.setText(SymQ.getQuestion(num));
         answer1.setText(SymQ.getChoice1(num));
         answer2.setText(SymQ.getChoice2(num));
