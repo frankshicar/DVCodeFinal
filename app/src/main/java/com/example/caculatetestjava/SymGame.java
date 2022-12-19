@@ -1,14 +1,14 @@
 package com.example.caculatetestjava;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -58,8 +58,6 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
-                } else {
-                    gameOver();
                 }
                 if (n == 9){
                     endGame();
@@ -75,8 +73,6 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
-                } else {
-                    gameOver();
                 }
                 if (n == 9){
                     endGame();
@@ -92,8 +88,6 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
-                } else {
-                    gameOver();
                 }
                 if (n == 9){
                     endGame();
@@ -109,8 +103,6 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
-                } else {
-                    gameOver();
                 }
                 if (n == 9){
                     endGame();
@@ -130,29 +122,6 @@ public class SymGame extends AppCompatActivity {
         mSymAnswer = SymQ.getCorrectAnswer(num);
     }
 
-    private void gameOver() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SymGame.this);
-        alertDialogBuilder
-                .setMessage("Game Over! Your score is " + mSymScore + " points.")
-                .setCancelable(false)
-                .setPositiveButton("NEW GAME",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(), SymGame.class));
-                            }
-                        })
-                .setNegativeButton("EXIT",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                finish();
-                            }
-                        });
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
     private void endGame() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SymGame.this);
         alertDialogBuilder

@@ -1,31 +1,34 @@
 package com.example.caculatetestjava;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
 public class AnsGame extends AppCompatActivity {
 
-    Button answer01, answer02, answer03, answer04;
+    EditText answer;
+    TextView score, question;
+    Button btn;
+    int i = 0;
 
-    TextView ANSscore, ANSquestion;
-
-    private final AnsQuestion AnsQ = new AnsQuestion();
+    private AnsQuestion mQuestions = new AnsQuestion();
 
     // 問題答案
-    private String mAnswer;
+
+    String Answer, mAnswer;
     // 初始分數
-    private int mANSScore = 0;
+    private int mScore = 0;
     // 問題題目數
-    private int mQuestionsLength = AnsQ.AnsQ.length;
+    private int mQuestionsLength = mQuestions.AnsQ.length;
 
     Random r;
     @Override
@@ -34,103 +37,65 @@ public class AnsGame extends AppCompatActivity {
         setContentView(R.layout.activity_ans_game);
         r = new Random();
 
-        answer01 = findViewById(R.id.ANSanswer1);
-        answer02 = findViewById(R.id.ANSanswer2);
-        answer03 = findViewById(R.id.ANSanswer3);
-        answer04 = findViewById(R.id.ANSanswer4);
+        answer = findViewById(R.id.Ans);
+        btn = findViewById(R.id.button);
+        score = findViewById(R.id.score);
+        question = findViewById(R.id.question);
+        Answer = String.valueOf(answer.getText());
+        score.setText("Score: " + mScore);
 
-        ANSscore = findViewById(R.id.ANSscore);
-        ANSquestion = findViewById(R.id.ANSquestion);
-
-        ANSscore.setText("Score: " + mANSScore);
 
         updateQuestion(r.nextInt(mQuestionsLength));
 
-        answer01.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (answer01.getText() == mAnswer) {
-                    mANSScore++;
-                    ANSscore.setText("Score: " + mANSScore);
+//                    question.setText(answer.getText());
+                if (mAnswer.compareTo(String.valueOf(answer.getText())) == 0) {
+                    mScore++;
+                    score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionsLength));
-                } else {
-                    gameOver();
+                    i++;
+                }
+                if (i == 9){
+                    endGame();
                 }
             }
         });
 
-        answer02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer02.getText() == mAnswer) {
-                    mANSScore++;
-                    ANSscore.setText("Score: " + mANSScore);
-                    updateQuestion(r.nextInt(mQuestionsLength));
-                } else {
-                    gameOver();
-                }
-            }
-        });
 
-        answer03.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer03.getText() == mAnswer) {
-                    mANSScore++;
-                    ANSscore.setText("Score: " + mANSScore);
-                    updateQuestion(r.nextInt(mQuestionsLength));
-                } else {
-                    gameOver();
-                }
-            }
-        });
-
-        answer04.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (answer04.getText() == mAnswer) {
-                    mANSScore++;
-                    ANSscore.setText("Score: " + mANSScore);
-                    updateQuestion(r.nextInt(mQuestionsLength));
-                } else {
-                    gameOver();
-                }
-            }
-        });
     }
 
     private void updateQuestion(int num) {
-        ANSquestion.setText(AnsQ.getQuestion(num));
-        answer01.setText(AnsQ.getChoice1(num));
-        answer02.setText(AnsQ.getChoice2(num));
-        answer03.setText(AnsQ.getChoice3(num));
-        answer04.setText(AnsQ.getChoice4(num));
+        question.setText(mQuestions.getQuestion(num));
+        btn.setText(mQuestions.getChoice1(num));
 
-        mAnswer = AnsQ.getCorrectAnswer(num);
+        mAnswer = mQuestions.getCorrectAnswer(num);
     }
 
-    private void gameOver() {
+
+
+    private void endGame(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AnsGame.this);
         alertDialogBuilder
-                .setMessage("Game Over! Your score is " + mANSScore + " points.")
+                .setMessage("Game Over! Your score is " + mScore + " points.")
                 .setCancelable(false)
                 .setPositiveButton("NEW GAME",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(), AnsGame.class));
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
                         })
                 .setNegativeButton("EXIT",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
                             }
                         });
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-
     }
 }
