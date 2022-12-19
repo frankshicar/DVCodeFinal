@@ -6,43 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="500dp"
+        android:layout_height="800dp"
+        android:layout_marginStart="-43dp"
+        android:layout_marginTop="-100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
+
+    <ImageButton
+        android:id="@+id/AnsGameBtn"
+        android:layout_width="343dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="260dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pinktitle" />
+
+    <ImageButton
+        android:id="@+id/SymGameBtn"
+        android:layout_width="343dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AnsGameBtn"
+        app:srcCompat="@drawable/greentitle" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="343dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SymGameBtn"
+        app:srcCompat="@drawable/bluetitle" />
+
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="132dp"
+        android:fontFamily="@font/cute"
+        android:text="一起來算數"
+        android:textColor="#000000"
+        android:textSize="60sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/AnsGameBtn"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="216dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cute"
+        android:text="數字版遊戲"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/AnsGameBtn"
+        app:layout_constraintTop_toTopOf="@+id/AnsGameBtn" />
 
-    <Button
-        android:id="@+id/SymGameBtn"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="216dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cute"
+        android:text="計算機"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="24dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AnsGameBtn" />
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cute"
+        android:text="符號版遊戲"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/SymGameBtn"
+        app:layout_constraintTop_toTopOf="@+id/SymGameBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
