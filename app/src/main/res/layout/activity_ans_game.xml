@@ -34,8 +34,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="0dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/button"

@@ -59,7 +59,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
-                if (n == 9){
+                if (n == 10){
                     endGame();
                 }
             }
@@ -74,7 +74,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
-                if (n == 9){
+                if (n == 10){
                     endGame();
                 }
             }
@@ -89,7 +89,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
-                if (n == 9){
+                if (n == 10){
                     endGame();
                 }
             }
@@ -104,7 +104,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
-                if (n == 9){
+                if (n == 10){
                     endGame();
                 }
             }

@@ -35,6 +35,7 @@ public class AnsGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ans_game);
+
         r = new Random();
 
         answer = findViewById(R.id.Ans);
@@ -56,10 +57,17 @@ public class AnsGame extends AppCompatActivity {
                     score.setText("Score: " + mScore);
                     updateQuestion(r.nextInt(mQuestionsLength));
                     i++;
+                    answer.setText("");
+                }else {
+                    score.setText("Score: " + mScore);
+                    updateQuestion(r.nextInt(mQuestionsLength));
+                    i++;
+                    answer.setText("");
                 }
-                if (i == 9){
+                if (i == 10){
                     endGame();
                 }
+//                updateQuestion(r.nextInt(mQuestionsLength));
             }
         });
 
@@ -68,7 +76,6 @@ public class AnsGame extends AppCompatActivity {
 
     private void updateQuestion(int num) {
         question.setText(mQuestions.getQuestion(num));
-        btn.setText(mQuestions.getChoice1(num));
 
         mAnswer = mQuestions.getCorrectAnswer(num);
     }
