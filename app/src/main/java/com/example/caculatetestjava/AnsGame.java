@@ -91,7 +91,7 @@ public class AnsGame extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), AnsGame.class));
                             }
                         })
                 .setNegativeButton("EXIT",
