@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,26 +31,28 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
     private final static int IS_CLOSE_PARENTHESIS = 3;
     private final static int IS_DOT = 4;
 
-    Button buttonNumber0;
-    Button buttonNumber1;
-    Button buttonNumber2;
-    Button buttonNumber3;
-    Button buttonNumber4;
-    Button buttonNumber5;
-    Button buttonNumber6;
-    Button buttonNumber7;
-    Button buttonNumber8;
-    Button buttonNumber9;
+    ImageButton buttonNumber0;
+    ImageButton buttonNumber1;
+    ImageButton buttonNumber2;
+    ImageButton buttonNumber3;
+    ImageButton buttonNumber4;
+    ImageButton buttonNumber5;
+    ImageButton buttonNumber6;
+    ImageButton buttonNumber7;
+    ImageButton buttonNumber8;
+    ImageButton buttonNumber9;
 
-    Button buttonClear;
-    Button buttonParentheses;
-    Button buttonPercent;
-    Button buttonDivision;
-    Button buttonMultiplication;
-    Button buttonSubtraction;
-    Button buttonAddition;
-    Button buttonEqual;
-    Button buttonDot;
+    ImageButton buttonClear;
+    ImageButton buttonParentheses;
+    ImageButton buttonPercent;
+    ImageButton buttonDivision;
+    ImageButton buttonMultiplication;
+    ImageButton buttonSubtraction;
+    ImageButton buttonAddition;
+    ImageButton buttonEqual;
+    ImageButton buttonDot;
+
+    ImageButton buttonBack;
 
     TextView textViewInputNumbers;
 
@@ -61,6 +63,7 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_caculator);
         scriptEngine = new ScriptEngineManager().getEngineByName("rhino");
 
+
         initializeViewVariables();
         setOnClickListeners();
         setOnTouchListener();
@@ -68,27 +71,29 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
 
     private void initializeViewVariables()
     {
-        buttonNumber0 = (Button) findViewById(R.id.button_zero);
-        buttonNumber1 = (Button) findViewById(R.id.button_one);
-        buttonNumber2 = (Button) findViewById(R.id.button_two);
-        buttonNumber3 = (Button) findViewById(R.id.button_three);
-        buttonNumber4 = (Button) findViewById(R.id.button_four);
-        buttonNumber5 = (Button) findViewById(R.id.button_five);
-        buttonNumber6 = (Button) findViewById(R.id.button_six);
-        buttonNumber7 = (Button) findViewById(R.id.button_seven);
-        buttonNumber8 = (Button) findViewById(R.id.button_eight);
-        buttonNumber9 = (Button) findViewById(R.id.button_nine);
+        buttonNumber0 = (ImageButton) findViewById(R.id.button_zero);
+        buttonNumber1 = (ImageButton) findViewById(R.id.button_one);
+        buttonNumber2 = (ImageButton) findViewById(R.id.button_two);
+        buttonNumber3 = (ImageButton) findViewById(R.id.button_three);
+        buttonNumber4 = (ImageButton) findViewById(R.id.button_four);
+        buttonNumber5 = (ImageButton) findViewById(R.id.button_five);
+        buttonNumber6 = (ImageButton) findViewById(R.id.button_six);
+        buttonNumber7 = (ImageButton) findViewById(R.id.button_seven);
+        buttonNumber8 = (ImageButton) findViewById(R.id.button_eight);
+        buttonNumber9 = (ImageButton) findViewById(R.id.button_nine);
 
-        buttonClear = (Button) findViewById(R.id.button_clear);
-        buttonParentheses = (Button) findViewById(R.id.button_parentheses);
-        buttonPercent = (Button) findViewById(R.id.button_percent);
-        buttonDivision = (Button) findViewById(R.id.button_division);
-        buttonMultiplication = (Button) findViewById(R.id.button_multiplication);
-        buttonSubtraction = (Button) findViewById(R.id.button_subtraction);
-        buttonAddition = (Button) findViewById(R.id.button_addition);
-        buttonEqual = (Button) findViewById(R.id.button_equal);
-        buttonDot = (Button) findViewById(R.id.button_dot);
+        buttonClear = (ImageButton) findViewById(R.id.button_clear);
+        buttonParentheses = (ImageButton) findViewById(R.id.button_parentheses);
+        buttonPercent = (ImageButton) findViewById(R.id.button_percent);
+        buttonDivision = (ImageButton) findViewById(R.id.button_division);
+        buttonMultiplication = (ImageButton) findViewById(R.id.button_multiplication);
+        buttonSubtraction = (ImageButton) findViewById(R.id.button_subtraction);
+        buttonAddition = (ImageButton) findViewById(R.id.button_addition);
+        buttonEqual = (ImageButton) findViewById(R.id.button_equal);
+        buttonDot = (ImageButton) findViewById(R.id.button_dot);
         textViewInputNumbers = (TextView) findViewById(R.id.textView_input_numbers);
+
+        buttonBack = (ImageButton) findViewById(R.id.btn_back);
     }
 
     private void setOnClickListeners()
@@ -113,6 +118,8 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
         buttonAddition.setOnClickListener((View.OnClickListener) this);
         buttonEqual.setOnClickListener((View.OnClickListener) this);
         buttonDot.setOnClickListener((View.OnClickListener) this);
+
+        buttonBack.setOnClickListener((View.OnClickListener) this);
     }
 
     private void setOnTouchListener()
@@ -136,6 +143,8 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
         buttonSubtraction.setOnTouchListener((View.OnTouchListener) this);
         buttonAddition.setOnTouchListener((View.OnTouchListener) this);
         buttonDot.setOnTouchListener((View.OnTouchListener) this);
+
+        buttonBack.setOnTouchListener((View.OnTouchListener) this);
     }
 
 
@@ -188,7 +197,7 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
             case R.id.button_percent:
                 if (addOperand("%")) equalClicked = false;
                 break;
-            case R.id.button_dot:
+            case R.id.button_dot :
                 if (addDot()) equalClicked = false;
                 break;
             case R.id.button_parentheses:
@@ -200,6 +209,8 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
                 dotUsed = false;
                 equalClicked = false;
                 break;
+            case R.id.btn_back:
+                finish();
             case R.id.button_equal:
                 if (textViewInputNumbers.getText().toString() != null && !textViewInputNumbers.getText().toString().equals(""))
                     calculate(textViewInputNumbers.getText().toString());

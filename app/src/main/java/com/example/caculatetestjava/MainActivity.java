@@ -5,22 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         ImageButton btn = findViewById(R.id.AnsGameBtn);
         ImageButton btn2 = findViewById(R.id.SymGameBtn);
         ImageButton btn3 = findViewById(R.id.button);
-
+        ImageView img_frame = findViewById(R.id.imageView);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
