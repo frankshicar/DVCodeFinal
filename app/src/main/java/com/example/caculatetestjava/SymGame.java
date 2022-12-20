@@ -58,6 +58,10 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
+                }else {
+                    score.setText("Score: " + score);
+                    updateQuestion(r.nextInt(mSymQuestionsLength));
+                    n++;
                 }
                 if (n == 10){
                     endGame();
@@ -71,6 +75,10 @@ public class SymGame extends AppCompatActivity {
                 if (answer2.getText() == mSymAnswer) {
                     mSymScore++;
                     score.setText("Score: " + mSymScore);
+                    updateQuestion(r.nextInt(mSymQuestionsLength));
+                    n++;
+                }else {
+                    score.setText("Score: " + score);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
@@ -88,6 +96,10 @@ public class SymGame extends AppCompatActivity {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
+                }else {
+                    score.setText("Score: " + score);
+                    updateQuestion(r.nextInt(mSymQuestionsLength));
+                    n++;
                 }
                 if (n == 10){
                     endGame();
@@ -101,6 +113,10 @@ public class SymGame extends AppCompatActivity {
                 if (answer4.getText() == mSymAnswer) {
                     mSymScore++;
                     score.setText("Score: " + mSymScore);
+                    updateQuestion(r.nextInt(mSymQuestionsLength));
+                    n++;
+                }else {
+                    score.setText("Score: " + score);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
