@@ -59,7 +59,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }else {
-                    score.setText("Score: " + score);
+                    score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
@@ -78,7 +78,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }else {
-                    score.setText("Score: " + score);
+                    score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
@@ -97,7 +97,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }else {
-                    score.setText("Score: " + score);
+                    score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
@@ -116,7 +116,7 @@ public class SymGame extends AppCompatActivity {
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }else {
-                    score.setText("Score: " + score);
+                    score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
                     n++;
                 }
@@ -154,7 +154,7 @@ public class SymGame extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(getApplicationContext(), SymGame.class));
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
                         });
 

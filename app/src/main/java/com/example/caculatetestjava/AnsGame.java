@@ -98,7 +98,7 @@ public class AnsGame extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                finish();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
                         });
 
