@@ -1,10 +1,12 @@
 package com.example.caculatetestjava;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -17,6 +19,8 @@ public class SymGame extends AppCompatActivity {
     Button answer1, answer2, answer3, answer4;
 
     TextView score, question;
+
+    ImageButton btnBack,btnRule;
 
     int n = 0;
 
@@ -31,6 +35,7 @@ public class SymGame extends AppCompatActivity {
 
     Random r;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,9 @@ public class SymGame extends AppCompatActivity {
 
         score = findViewById(R.id.score);
         question = findViewById(R.id.question);
+
+        btnBack = findViewById(R.id.btn_back);
+        btnRule = findViewById(R.id.btn_rule);
 
         score.setText("Score: " + mSymScore);
 
@@ -125,6 +133,20 @@ public class SymGame extends AppCompatActivity {
                 }
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        btnRule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Rule.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void updateQuestion(int num) {

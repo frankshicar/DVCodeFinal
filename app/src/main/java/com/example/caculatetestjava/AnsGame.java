@@ -1,11 +1,13 @@
 package com.example.caculatetestjava;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,6 +20,7 @@ public class AnsGame extends AppCompatActivity {
     EditText answer;
     TextView score, question;
     Button btn;
+    ImageButton btnBack,btnRule;
     int i = 0;
 
     private AnsQuestion mQuestions = new AnsQuestion();
@@ -31,6 +34,7 @@ public class AnsGame extends AppCompatActivity {
     private int mQuestionsLength = mQuestions.AnsQ.length;
 
     Random r;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +48,8 @@ public class AnsGame extends AppCompatActivity {
         question = findViewById(R.id.question);
         Answer = String.valueOf(answer.getText());
         score.setText("Score: " + mScore);
-
+        btnBack=findViewById(R.id.btn_back);
+        btnRule=findViewById(R.id.btn_rule);
 
         updateQuestion(r.nextInt(mQuestionsLength));
 
@@ -70,6 +75,20 @@ public class AnsGame extends AppCompatActivity {
 //                updateQuestion(r.nextInt(mQuestionsLength));
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        btnRule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Rule.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
