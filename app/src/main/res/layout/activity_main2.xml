@@ -4,49 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SymGame">
+   tools:context=".SymGame"
+    android:background="@drawable/symwallpaper">
 
     <Button
         android:id="@+id/answer4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:text="button" />
+        android:layout_width="139dp"
+        android:layout_height="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="545dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="0dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:text="button"
+        android:textColor="#00000000" />
 
     <Button
         android:id="@+id/answer3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/answer4"
-        android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:layout_width="133dp"
+        android:layout_height="131dp"
+        android:layout_alignTop="@+id/answer4"
+        android:layout_marginTop="-5dp"
+        android:layout_marginRight="9dp"
+        android:layout_toLeftOf="@id/answer4"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:text="Button"
+        android:textColor="#00000000" />
 
     <Button
         android:id="@+id/answer2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="144dp"
         android:layout_above="@+id/answer3"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Button" />
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="6dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:text="Button"
+        android:textColor="#00000000" />
 
     <Button
         android:id="@+id/answer1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/answer2"
-        android:layout_marginBottom="-5dp"
-        android:text="Button" />
+        android:layout_width="142dp"
+        android:layout_height="139dp"
+        android:layout_alignBottom="@+id/answer2"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toLeftOf="@+id/answer2"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:text="Button"
+        android:textColor="#00000000" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="TextView"
+        android:layout_marginTop="51dp"
         android:gravity="center"
+        android:text="TextView"
         android:textSize="24dp" />
 
     <TextView
