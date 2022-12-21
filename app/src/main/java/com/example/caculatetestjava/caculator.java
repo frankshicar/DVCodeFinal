@@ -64,6 +64,7 @@ public class caculator extends AppCompatActivity implements View.OnClickListener
         scriptEngine = new ScriptEngineManager().getEngineByName("rhino");
 
 
+
         initializeViewVariables();
         setOnClickListeners();
         setOnTouchListener();

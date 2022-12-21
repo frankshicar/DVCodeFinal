@@ -16,6 +16,8 @@ import java.util.Random;
 
 public class SymGame extends AppCompatActivity {
 
+    private Intent intent;
+
     Button answer1, answer2, answer3, answer4;
 
     TextView score, question;
@@ -40,6 +42,10 @@ public class SymGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        intent = new Intent(SymGame.this, MyIntentService.class);
+        String action = MyIntentService.ACTION_MUSIC;
+        intent.setAction(action);
+//        startService(intent);
 
         r = new Random();
 

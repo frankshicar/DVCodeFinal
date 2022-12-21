@@ -40,6 +40,8 @@ public class AnsGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ans_game);
 
+
+
         r = new Random();
 
         answer = findViewById(R.id.Ans);

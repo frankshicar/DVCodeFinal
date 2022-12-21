@@ -1,27 +1,29 @@
 package com.example.caculatetestjava;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 
 public class MainActivity extends AppCompatActivity {
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        intent = new Intent(MainActivity.this, MyIntentService.class);
+        String action = MyIntentService.ACTION_MUSIC;
+        intent.setAction(action);
+        startService(intent);
 
         ImageButton btn = findViewById(R.id.AnsGameBtn);
         ImageButton btn2 = findViewById(R.id.SymGameBtn);
@@ -55,5 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
+//    @Override
+//    protected void onDestroy(){
+//        super.onDestroy();
+//        if(intent != null){
+//            stopService(intent);
+//        }
+//    }
 }
