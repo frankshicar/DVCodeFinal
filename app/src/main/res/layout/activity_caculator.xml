@@ -120,7 +120,7 @@
         android:id="@+id/button_dot"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="7dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
         app:layout_constraintStart_toEndOf="@+id/button_zero"
@@ -137,18 +137,6 @@
         android:scaleType="centerInside"
         app:layout_constraintStart_toEndOf="@+id/button_one"
         app:layout_constraintTop_toBottomOf="@+id/button_five"
-        app:srcCompat="@drawable/calculatorbtn"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/button_zero"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15"
-        app:layout_constraintTop_toBottomOf="@+id/button_two"
         app:srcCompat="@drawable/calculatorbtn"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -229,18 +217,6 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="60dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_one"
-        app:srcCompat="@drawable/calculatorbtn"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
         android:id="@+id/button_one"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -306,7 +282,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/cute"
         android:text="0"
@@ -410,7 +386,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/cute"
         android:text="C"
@@ -511,19 +487,6 @@
         app:layout_constraintTop_toBottomOf="@+id/button_three" />
 
     <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/cute"
-        android:text="00"
-        android:textColor="#404040"
-        android:textSize="42sp"
-        app:layout_constraintStart_toStartOf="@+id/imageButton15"
-        app:layout_constraintTop_toTopOf="@+id/imageButton15" />
-
-    <TextView
         android:id="@+id/textView_input_numbers"
         android:layout_width="295dp"
         android:layout_height="73dp"
@@ -547,6 +510,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/btn_back" />
+
+    <ImageButton
+        android:id="@+id/button_zero"
+        android:layout_width="146dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="68dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_one"
+        app:srcCompat="@drawable/calculatorbtnzero" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
