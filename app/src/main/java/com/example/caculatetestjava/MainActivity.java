@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
         bckgrnd = MediaPlayer.create(MainActivity.this, R.raw.backgroundmusic);
         bckgrnd.setLooping(true);
         bckgrnd.start();
+
 //        MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.backgroundmusic);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AnsGame.class);
-//                mediaPlayer.start();
                 startActivity(intent);
             }
         });
@@ -74,21 +74,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private void playAudio(){
-//        MediaPlayer mediaPlayer;
-//        mediaPlayer = MediaPlayer.create(this, R.raw.backgroundmusic);
-//
-//        if(!mediaPlayer.isPlaying()) mediaPlayer.start();
-//        else if (mediaPlayer.isPlaying()){
-//            mediaPlayer.stop();
-//            mediaPlayer.start();
-//        }
-//    }
-//    @Override
-//    protected void onDestroy(){
-//        super.onDestroy();
-//        if(intent != null){
-//            stopService(intent);
-//        }
-//    }
 }

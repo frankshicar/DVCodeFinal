@@ -3,6 +3,7 @@ package com.example.caculatetestjava;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,9 @@ public class SymGame extends AppCompatActivity {
 
     ImageButton btnBack,btnRule;
 
-    int n = 0;
+    MediaPlayer bckgrnd;
+
+    int n = 0, u=0;
 
     private final SymQuestion SymQ = new SymQuestion();
 
@@ -34,6 +37,7 @@ public class SymGame extends AppCompatActivity {
     private int mSymScore = 0;
 
     private int mSymQuestionsLength = SymQ.SymQ.length;
+    MediaPlayer bckgrnd3;
 
     Random r;
 
@@ -115,6 +119,7 @@ public class SymGame extends AppCompatActivity {
                 }else {
                     score.setText("Score: " + mSymScore);
                     updateQuestion(r.nextInt(mSymQuestionsLength));
+                    u++;
                     n++;
                 }
                 if (n == 10){
@@ -185,6 +190,7 @@ public class SymGame extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                bckgrnd3.stop();
                             }
                         });
 

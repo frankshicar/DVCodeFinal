@@ -3,6 +3,7 @@ package com.example.caculatetestjava;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ public class AnsGame extends AppCompatActivity {
 
     private AnsQuestion mQuestions = new AnsQuestion();
 
+    MediaPlayer bckgrnd2;
 
     String Answer, mAnswer;
 
@@ -46,6 +48,10 @@ public class AnsGame extends AppCompatActivity {
 //        String action = MyIntentService.ACTION_MUSIC;
 //        intent.setAction(action);
 //        startService(intent);
+//        bckgrnd2 = MediaPlayer.create(AnsGame.this, R.raw.backgroundmusic);
+//        bckgrnd2.setLooping(true);
+//
+//        bckgrnd2.start();
 
         r = new Random();
 
@@ -80,12 +86,12 @@ public class AnsGame extends AppCompatActivity {
                 if (i == 10){
                     endGame();
                 }
-//                updateQuestion(r.nextInt(mQuestionsLength));
             }
         });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                bckgrnd2.stop();
                 finish();
             }
         });
@@ -127,7 +133,7 @@ public class AnsGame extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
+                                bckgrnd2.stop();
                             }
                         });
 
