@@ -21,14 +21,16 @@ public class AnsGame extends AppCompatActivity {
     TextView score, question;
     Button btn;
     ImageButton btnBack,btnRule;
+    private Intent intent;
+
+
     int i = 0;
 
     private AnsQuestion mQuestions = new AnsQuestion();
 
-    // 問題答案
 
     String Answer, mAnswer;
-    // 初始分數
+
     private int mScore = 0;
     // 問題題目數
     private int mQuestionsLength = mQuestions.AnsQ.length;
@@ -40,9 +42,13 @@ public class AnsGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ans_game);
 
-
+//        intent = new Intent(AnsGame.this, MyIntentService.class);
+//        String action = MyIntentService.ACTION_MUSIC;
+//        intent.setAction(action);
+//        startService(intent);
 
         r = new Random();
+
 
         answer = findViewById(R.id.Ans);
         btn = findViewById(R.id.button);
@@ -95,6 +101,7 @@ public class AnsGame extends AppCompatActivity {
 
     }
 
+
     private void updateQuestion(int num) {
         question.setText(mQuestions.getQuestion(num));
 
@@ -120,6 +127,7 @@ public class AnsGame extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                             }
                         });
 

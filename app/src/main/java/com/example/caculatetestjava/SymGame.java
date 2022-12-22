@@ -28,11 +28,11 @@ public class SymGame extends AppCompatActivity {
 
     private final SymQuestion SymQ = new SymQuestion();
 
-    // 問題答案
+
     private String mSymAnswer;
-    // 初始分數
+
     private int mSymScore = 0;
-    // 問題題目數
+
     private int mSymQuestionsLength = SymQ.SymQ.length;
 
     Random r;
@@ -42,9 +42,11 @@ public class SymGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        intent = new Intent(SymGame.this, MyIntentService.class);
-        String action = MyIntentService.ACTION_MUSIC;
-        intent.setAction(action);
+
+
+//        intent = new Intent(SymGame.this, MyIntentService.class);
+//        String action = MyIntentService.ACTION_MUSIC;
+//        intent.setAction(action);
 //        startService(intent);
 
         r = new Random();

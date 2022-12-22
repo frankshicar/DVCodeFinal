@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="61dp"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="24dp" />
 
     <TextView
@@ -23,11 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_below="@+id/score"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="42dp"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="24dp" />
 
     <EditText
@@ -36,8 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/question"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="39dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -47,8 +46,8 @@
         android:layout_height="62dp"
         android:layout_below="@id/Ans"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="97dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="95dp"
         android:background="#00000000"
         android:text="Button"
         android:textColor="#00000000" />
