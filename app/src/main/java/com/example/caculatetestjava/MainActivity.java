@@ -23,27 +23,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-//        intent = new Intent(MainActivity.this, MyIntentService.class);
-//        String action = MyIntentService.ACTION_MUSIC;
-//        intent.setAction(action);
-//        startService(intent);
-
 
         ImageButton btn = findViewById(R.id.AnsGameBtn);
         ImageButton btn2 = findViewById(R.id.SymGameBtn);
         ImageButton btn3 = findViewById(R.id.button);
 
+        //封面動畫
         AnimationDrawable ani = (AnimationDrawable) getResources().getDrawable(R.drawable.symbol_animation);
         ImageView img_frame = findViewById(R.id.imageView3);
         img_frame.setImageDrawable(ani);
         ani.start();
-
+        //背景音樂
         bckgrnd = MediaPlayer.create(MainActivity.this, R.raw.backgroundmusic);
         bckgrnd.setLooping(true);
         bckgrnd.start();
 
-//        MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.backgroundmusic);
-
+        //答案遊戲跳頁按鈕
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //符號遊戲跳頁按鈕
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //計算機跳頁按鈕
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        super.onCreate(savedInstanceState);
-//        playAudio();
 
 
     }

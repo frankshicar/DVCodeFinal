@@ -34,7 +34,7 @@ public class AnsGame extends AppCompatActivity {
     String Answer, mAnswer;
 
     private int mScore = 0;
-    // 問題題目數
+    //問題題目數
     private int mQuestionsLength = mQuestions.AnsQ.length;
 
     Random r;
@@ -44,17 +44,10 @@ public class AnsGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ans_game);
 
-//        intent = new Intent(AnsGame.this, MyIntentService.class);
-//        String action = MyIntentService.ACTION_MUSIC;
-//        intent.setAction(action);
-//        startService(intent);
-//        bckgrnd2 = MediaPlayer.create(AnsGame.this, R.raw.backgroundmusic);
-//        bckgrnd2.setLooping(true);
-//
-//        bckgrnd2.start();
 
         r = new Random();
-
+        //隨機題目
+        updateQuestion(r.nextInt(mQuestionsLength));
 
         answer = findViewById(R.id.Ans);
         btn = findViewById(R.id.button);
@@ -65,12 +58,11 @@ public class AnsGame extends AppCompatActivity {
         btnBack=findViewById(R.id.btn_back);
         btnRule=findViewById(R.id.btn_rule);
 
-        updateQuestion(r.nextInt(mQuestionsLength));
 
+        //答案判斷
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                    question.setText(answer.getText());
                 if (mAnswer.compareTo(String.valueOf(answer.getText())) == 0) {
                     mScore++;
                     score.setText("Score: " + mScore);
@@ -88,13 +80,14 @@ public class AnsGame extends AppCompatActivity {
                 }
             }
         });
+        //回到主畫面
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                bckgrnd2.stop();
                 finish();
             }
         });
+        //規則頁面
         btnRule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +100,7 @@ public class AnsGame extends AppCompatActivity {
 
     }
 
-
+    //從AnsQuestion檔案抓取題目跟答案
     private void updateQuestion(int num) {
         question.setText(mQuestions.getQuestion(num));
 
@@ -115,7 +108,7 @@ public class AnsGame extends AppCompatActivity {
     }
 
 
-
+    //遊戲結束時的畫面
     private void endGame(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AnsGame.this);
         alertDialogBuilder

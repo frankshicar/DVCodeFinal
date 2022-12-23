@@ -35,7 +35,7 @@ public class SymGame extends AppCompatActivity {
     private String mSymAnswer;
 
     private int mSymScore = 0;
-
+    //問題題目數
     private int mSymQuestionsLength = SymQ.SymQ.length;
     MediaPlayer bckgrnd3;
 
@@ -47,13 +47,6 @@ public class SymGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
-//        intent = new Intent(SymGame.this, MyIntentService.class);
-//        String action = MyIntentService.ACTION_MUSIC;
-//        intent.setAction(action);
-//        startService(intent);
-
-        r = new Random();
 
         answer1 = findViewById(R.id.answer1);
         answer2 = findViewById(R.id.answer2);
@@ -68,8 +61,13 @@ public class SymGame extends AppCompatActivity {
 
         score.setText("Score: " + mSymScore);
 
+
+        r = new Random();
+
+        //隨機題目
         updateQuestion(r.nextInt(mSymQuestionsLength));
 
+        //答案判斷
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,7 +159,7 @@ public class SymGame extends AppCompatActivity {
         });
 
     }
-
+    //從SymQuestion檔案抓取題目跟答案
     private void updateQuestion(int num) {
         
         question.setText(SymQ.getQuestion(num));
@@ -173,6 +171,8 @@ public class SymGame extends AppCompatActivity {
         mSymAnswer = SymQ.getCorrectAnswer(num);
     }
 
+
+    //遊戲結束時的畫面
     private void endGame() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SymGame.this);
         alertDialogBuilder
@@ -191,6 +191,7 @@ public class SymGame extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 bckgrnd3.stop();
+
                             }
                         });
 
