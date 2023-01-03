@@ -45,9 +45,7 @@ public class AnsGame extends AppCompatActivity {
         setContentView(R.layout.activity_ans_game);
 
 
-        r = new Random();
-        //隨機題目
-        updateQuestion(r.nextInt(mQuestionsLength));
+
 
         answer = findViewById(R.id.Ans);
         btn = findViewById(R.id.button);
@@ -58,6 +56,11 @@ public class AnsGame extends AppCompatActivity {
         btnBack=findViewById(R.id.btn_back);
         btnRule=findViewById(R.id.btn_rule);
 
+
+        r = new Random();
+
+        //隨機題目
+        updateQuestion(r.nextInt(mQuestionsLength));
 
         //答案判斷
         btn.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +129,8 @@ public class AnsGame extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                bckgrnd2.stop();
+//                                bckgrnd2.stop();
+                                bckgrnd2.release();
                             }
                         });
 
