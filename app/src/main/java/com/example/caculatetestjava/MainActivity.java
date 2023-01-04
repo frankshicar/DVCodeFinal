@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView img_frame = findViewById(R.id.imageView3);
         img_frame.setImageDrawable(ani);
         ani.start();
+
         //背景音樂
         bckgrnd = MediaPlayer.create(MainActivity.this, R.raw.backgroundmusic);
         bckgrnd.setLooping(true);

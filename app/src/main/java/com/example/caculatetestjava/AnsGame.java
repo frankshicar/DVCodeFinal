@@ -129,8 +129,8 @@ public class AnsGame extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                                bckgrnd2.stop();
-                                bckgrnd2.release();
+                                bckgrnd2.pause();
+                                bckgrnd2.stop();
                             }
                         });
 
